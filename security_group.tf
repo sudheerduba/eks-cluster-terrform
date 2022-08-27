@@ -5,4 +5,8 @@ resource "aws_security_group" "default_group" {
   depends_on = [
     aws_vpc.eks_vpc
   ]
+
+  tags = {
+    "Name" = "${var.environment}-default-sg"
+  }
 }

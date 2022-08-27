@@ -1,9 +1,17 @@
 resource "aws_route_table" "public_route" {
   vpc_id = aws_vpc.eks_vpc.id
+
+  tags = {
+    "Name" = "${var.environment}-public-rt"
+  }
 }
 
 resource "aws_route_table" "private_route" {
   vpc_id = aws_vpc.eks_vpc.id
+
+  tags = {
+    "Name" = "${var.environment}-private-rt"
+  }
 }
 
 resource "aws_route" "public_igw" {

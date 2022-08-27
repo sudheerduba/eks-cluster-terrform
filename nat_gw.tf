@@ -5,4 +5,8 @@ resource "aws_nat_gateway" "nat_gw" {
     aws_subnet.eks_public_subnets,
     aws_eip.nat_eip
   ]
+
+  tags = {
+    "Name" = "${var.environment}-nat-gw"
+  }
 }

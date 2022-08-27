@@ -1,10 +1,3 @@
-locals {
-  common_tags = {
-    Application = "EKS-Cluster"
-    Tool        = "Terragrunt-managed"
-  }
-}
-
 variable "region_name" {
   description = "Region name of AWS to manage the resources"
   type        = string
